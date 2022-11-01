@@ -30,15 +30,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="RKG-2A-gUO">
+                                <rect key="frame" x="49" y="54" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="0C3-Yv-K7d"/>
+                                    <constraint firstAttribute="height" constant="50" id="nWF-bA-qF7"/>
+                                </constraints>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Eli-ca-Qbe" secondAttribute="bottom" constant="10" id="3cv-iH-Ra5"/>
+                            <constraint firstItem="RKG-2A-gUO" firstAttribute="centerY" secondItem="BfP-UZ-VyJ" secondAttribute="centerY" id="75N-zz-wnO"/>
                             <constraint firstAttribute="trailing" secondItem="9Dg-Zl-JBL" secondAttribute="trailing" id="cJU-ua-Tcn"/>
                             <constraint firstItem="Eli-ca-Qbe" firstAttribute="leading" secondItem="BfP-UZ-VyJ" secondAttribute="leading" id="e4h-jd-UoP"/>
                             <constraint firstAttribute="trailing" secondItem="Eli-ca-Qbe" secondAttribute="trailing" id="ius-1O-y8d"/>
                             <constraint firstItem="Eli-ca-Qbe" firstAttribute="top" secondItem="9Dg-Zl-JBL" secondAttribute="bottom" id="l6f-1c-JvW"/>
                             <constraint firstItem="9Dg-Zl-JBL" firstAttribute="top" secondItem="BfP-UZ-VyJ" secondAttribute="top" id="qmU-LI-tWD"/>
+                            <constraint firstItem="RKG-2A-gUO" firstAttribute="centerX" secondItem="BfP-UZ-VyJ" secondAttribute="centerX" id="s60-xU-gYM"/>
                             <constraint firstItem="9Dg-Zl-JBL" firstAttribute="leading" secondItem="BfP-UZ-VyJ" secondAttribute="leading" id="x6t-WN-vGg"/>
                         </constraints>
                     </view>
@@ -56,6 +66,7 @@
                 <outlet property="cellImageView1" destination="9Dg-Zl-JBL" id="fnB-VG-EMg"/>
                 <outlet property="cellLabel1" destination="Eli-ca-Qbe" id="7Yh-Bt-8JA"/>
                 <outlet property="cellView1" destination="BfP-UZ-VyJ" id="Zdl-fU-F2m"/>
+                <outlet property="progressIndicator" destination="RKG-2A-gUO" id="uFM-wJ-JBj"/>
             </connections>
             <point key="canvasLocation" x="115.38461538461539" y="-99.170616113744074"/>
         </collectionViewCell>

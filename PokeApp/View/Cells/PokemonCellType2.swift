@@ -13,9 +13,12 @@ class PokemonCellType2: UICollectionViewCell {
     @IBOutlet weak var cellLabel2: UILabel!
     
     @IBOutlet weak var cellView2: UIView!
+    
+    @IBOutlet weak var progressIndicator: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
     
     public func setupCell(pokemon: Pokemon?, id: Int) {
@@ -31,5 +34,6 @@ class PokemonCellType2: UICollectionViewCell {
         guard let pokemon = pokemon else { return }
         cellLabel2.text = pokemon.name.capitalized
         cellImageView2.loadFrom(with: id)
+        progressIndicator.stopAnimating()
     }
 }

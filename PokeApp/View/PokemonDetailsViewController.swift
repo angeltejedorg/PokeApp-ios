@@ -16,7 +16,7 @@ class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var heightValueLabel: UILabel!
     @IBOutlet weak var weightValueLabel: UILabel!
     
-    private let viewModel = PokemonDetailsViewModel()
+    private let viewModel = PokemonViewModel()
     public var pokemonDetails: PokemonDetails?
 
     override func viewDidLoad() {
@@ -48,11 +48,11 @@ class PokemonDetailsViewController: UIViewController {
     
     
     func setupBinders() {
-        viewModel.pokemonImage.bind { image in
+        viewModel.pokemonImage.bind { [weak self] image in
             if let image = image {
                 DispatchQueue.main.async {
-                    self.progressIndicator.isHidden = true
-                    self.pokemonImageview.image = image
+                    self?.progressIndicator.stopAnimating()
+                    self?.pokemonImageview.image = image
                 }
             }
         }

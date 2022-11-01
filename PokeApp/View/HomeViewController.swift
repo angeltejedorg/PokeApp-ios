@@ -22,8 +22,8 @@ class HomeViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.collectionViewLayout = UICollectionViewFlowLayout()
-        collectionView.register(UINib(nibName: "PokemonCell", bundle: nil), forCellWithReuseIdentifier: "PokemonCell1")
-        collectionView.register(UINib(nibName: "PokemonCellType2", bundle: nil), forCellWithReuseIdentifier: "PokemonCell2")
+        collectionView.register(UINib(nibName: Constants.nibNameCell1, bundle: nil), forCellWithReuseIdentifier: Constants.pokemonCellIdentifier1)
+        collectionView.register(UINib(nibName: Constants.nibNameCell2, bundle: nil), forCellWithReuseIdentifier: Constants.pokemonCellIdentifier2)
         
     }
     
@@ -47,7 +47,7 @@ class HomeViewController: UIViewController {
                   let weight = pokemonDetails?.weight
             else { return }
             
-            let viewController = self?.storyboard?.instantiateViewController(withIdentifier: "PokemonDetailsViewController") as! PokemonDetailsViewController
+            let viewController = self?.storyboard?.instantiateViewController(withIdentifier: Constants.pokemonDetailsVCIdentifier) as! PokemonDetailsViewController
             viewController.pokemonDetails = PokemonDetails(id: id,
                                                            name: name,
                                                            height: height,
@@ -77,12 +77,12 @@ extension HomeViewController: UICollectionViewDataSource {
         let pokemon = viewModel.pokemonList.value?[indexPath.row]
         
         if segmentedControl.selectedSegmentIndex == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCell1", for: indexPath) as! PokemonCellType1
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.pokemonCellIdentifier1, for: indexPath) as! PokemonCellType1
             cell.setupCell(pokemon: pokemon, id: indexPath.row + 1)
             return cell
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCell2", for: indexPath) as! PokemonCellType2
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.pokemonCellIdentifier2, for: indexPath) as! PokemonCellType2
         
         cell.setupCell(pokemon: pokemon, id: indexPath.row + 1)
         
@@ -96,9 +96,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         
         let numberOfCellsPerRow = segmentedControl.selectedSegmentIndex == 0 ? 2 : 1
     
-        let flowLayot = collectionViewLayout as! UICollectionViewFlowLayout
+        let flowlayout = collectionViewLayout as! UICollectionViewFlowLayout
         
-        let totalSpace = flowLayot.sectionInset.left + flowLayot.sectionInset.right + (flowLayot.minimumInteritemSpacing * CGFloat(numberOfCellsPerRow - 1))
+        let totalSpace = flowlayout.sectionInset.left + flowlayout.sectionInset.right + (flowlayout.minimumInteritemSpacing * CGFloat(numberOfCellsPerRow - 1))
         
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(numberOfCellsPerRow))
         

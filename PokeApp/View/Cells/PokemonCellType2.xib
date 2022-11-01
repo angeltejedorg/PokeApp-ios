@@ -33,14 +33,22 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="qXu-wC-hFu">
+                                <rect key="frame" x="65" y="29" width="20" height="20"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="sTm-hm-J0s" secondAttribute="bottom" id="2nF-fG-Frt"/>
                             <constraint firstItem="6bK-jG-bv5" firstAttribute="leading" secondItem="cii-zB-4Ew" secondAttribute="leading" id="5ey-1f-qQR"/>
+                            <constraint firstItem="qXu-wC-hFu" firstAttribute="leading" secondItem="cii-zB-4Ew" secondAttribute="leading" constant="65" id="7Dl-du-X0x"/>
                             <constraint firstItem="sTm-hm-J0s" firstAttribute="top" secondItem="cii-zB-4Ew" secondAttribute="top" id="ERt-dS-caD"/>
+                            <constraint firstItem="sTm-hm-J0s" firstAttribute="leading" secondItem="qXu-wC-hFu" secondAttribute="trailing" constant="73" id="Fvd-Ay-kWq"/>
                             <constraint firstAttribute="bottom" secondItem="6bK-jG-bv5" secondAttribute="bottom" id="GbM-F6-3Ui"/>
                             <constraint firstItem="sTm-hm-J0s" firstAttribute="leading" secondItem="6bK-jG-bv5" secondAttribute="trailing" constant="8" id="Jys-k6-AwB"/>
+                            <constraint firstItem="qXu-wC-hFu" firstAttribute="top" secondItem="cii-zB-4Ew" secondAttribute="top" constant="29" id="L0L-uf-KPI"/>
+                            <constraint firstAttribute="bottom" secondItem="qXu-wC-hFu" secondAttribute="bottom" constant="30" id="V7q-yZ-ttg"/>
                             <constraint firstItem="6bK-jG-bv5" firstAttribute="top" secondItem="cii-zB-4Ew" secondAttribute="top" id="oLa-CZ-uzM"/>
                             <constraint firstItem="sTm-hm-J0s" firstAttribute="centerY" secondItem="cii-zB-4Ew" secondAttribute="centerY" id="xtz-wb-GeQ"/>
                         </constraints>
@@ -59,6 +67,7 @@
                 <outlet property="cellImageView2" destination="6bK-jG-bv5" id="b1W-Wj-rPJ"/>
                 <outlet property="cellLabel2" destination="sTm-hm-J0s" id="VlT-Vc-b18"/>
                 <outlet property="cellView2" destination="cii-zB-4Ew" id="57D-mz-BAV"/>
+                <outlet property="progressIndicator" destination="qXu-wC-hFu" id="yh2-x0-rbu"/>
             </connections>
             <point key="canvasLocation" x="43.846153846153847" y="-15.284360189573459"/>
         </collectionViewCell>
