@@ -1,6 +1,10 @@
 # PokeApp-ios
 Pokemon App, develop with Swift using MVVM architecture and Alamofire for service requests.
 
+To run project:
+1. Install Cocoapods v- 1.11.3
+2. Run pod install con project folder
+3. Open .workspace file to open project
 App views:
 
 ![PokeApp-LaunchScreen](https://user-images.githubusercontent.com/80083204/199142281-9e281bc0-81d9-4f92-b57f-d4c6584331b6.jpeg) ![PokeApp-View1](https://user-images.githubusercontent.com/80083204/199142311-a5624bb2-6bbf-4c3c-b410-08de390a3ca5.jpeg)
